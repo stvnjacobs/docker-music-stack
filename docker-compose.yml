@@ -8,33 +8,10 @@ services:
     networks:
       - music_stack
 
-  # Add your host volumen in path/to/... or add your own volume below
-  mpd:
-    image: vitiman/alpine-mpd:latest
-    ports:
-      - "6600:6600"
-    depends_on:
-      - icecast
-    networks:
-      - music_stack
-    volumes:
-      - /path/to/mpd_music:/var/lib/mpd/music
-      - /path/to/mpd_playlists:/var/lib/mpd/playlists
-      - /path/to/mpd_database:/var/lib/mpd/database
-
-  sima:
-    image: vitiman/alpine-sima:latest
-    depends_on:
-      - mpd
-    networks:
-      - music_stack
-
-  ympd:
-    image: vitiman/alpine-ympd:latest
-    ports:
-      - "8080:8080"
-    depends_on:
-      - mpd
+  liquidsoap:
+    build:
+      context: liquidsoap/
+    image: liquidsoap:latest
     networks:
       - music_stack
 

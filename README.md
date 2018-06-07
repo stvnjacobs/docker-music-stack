@@ -5,6 +5,7 @@ This a ready, set and deploy internet radio stack built on docker.
 ## Applications used in the stack
 
 - [icecast](http://icecast.org/)
+- [liquidsoap](http://liquidsoap.info/)
 
 ## Execution
 
@@ -13,8 +14,8 @@ launching the containers one-by-one, your choice.
 
 The default applications are:
 
-- liquidsoap
 - icecast streaming: `http://localhost:8000/`
+- liquidsoap
 
 ### Docker Compose
 
@@ -26,7 +27,7 @@ Clone this repo. **Edit docker-compose.yml** and add your host volumes for your 
 
 It's strongly recommended to change passwords in icecast.xml.
 
-The passwords in configuration are setted for development purposes.
+The default passwords are for development or example purposes only.
 
 ## Configurations
 
